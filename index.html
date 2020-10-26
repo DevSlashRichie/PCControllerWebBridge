@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+
+    <title>THIS IS TEST</title>
+
   </head>
   <body>
+
+    <h1>Let's wait for some data.</h1>
+
     <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+
+      // Initialize Channels client
+      let channels = new Pusher('83913f65af1492cd2762', {
+          cluster: 'us2',
+        })
+        
+        // Subscribe to the appropriate channel
+        let channel = channels.subscribe('my-channel')
+        
+        // Bind a callback function to an event within the subscribed channel
+        channel.bind('my-event', function (data) {
+          console.log(data)
+        })
+
+
+    </script>
   </body>
 </html>
