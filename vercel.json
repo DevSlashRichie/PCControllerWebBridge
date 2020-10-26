@@ -1,13 +1,13 @@
 {
-    "version": 2,
-    "env": {
-      "APP_ID": "1096876",
-      "KEY": "83913f65af1492cd2762",
-      "SECRET": "d809356d49592e639548",
-      "CLUSTER": "us2"
-    },
-    "routes": [
-      { "src": "/", "dest": "/index.js", "methods": ["GET"] },
-      { "src": "/ping", "dest": "/index.js", "methods": ["GET"] }
-    ]
-  }
+  "version": 2,
+  "builds": [{
+    "src": "./server.js",
+    "use": "@now/node-server"
+  }],
+  "routes": [{"handle": "filesystem"},
+    {
+      "src": "/.*",
+      "dest": "server.js"
+    }
+  ]
+}
