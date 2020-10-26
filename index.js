@@ -13,6 +13,6 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(3000, () => {
-    console.log('listening on *:3000')
-});
+http.listen(process.env.PORT || 3500, () => {
+    console.log(`Localhost working on ${process.env.PORT || 3500}`);
+ })
