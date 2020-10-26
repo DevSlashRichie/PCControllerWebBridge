@@ -8,15 +8,16 @@ const {
 } = process.env
 
 const channels = new Channels({
-  appId,
-  key,
-  secret,
-  cluster,
+  appId: "1096876",
+  key: "83913f65af1492cd2762",
+  secret: "d809356d49592e639548",
+  cluster: "us2"
 })
 
 module.exports = (req, res) => {
   const data = req.body
-  channels.trigger('event-channel', 'event-name', data, () => {
-    res.status(200).end('sent event successfully')
+  channels.trigger("my-channel", "my-event", {
+    message: "hello world"
   })
+  res.send("done")
 }
