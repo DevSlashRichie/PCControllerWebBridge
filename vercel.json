@@ -1,10 +1,13 @@
 {
     "version": 2,
+    "builds": [{ "src": "index.js", "use": "@now/node-server" }],
     "env": {
       "APP_ID": "1096876",
       "KEY": "83913f65af1492cd2762",
       "SECRET": "d809356d49592e639548",
       "CLUSTER": "us2"
     },
-    "routes": [{ "src": "/ping", "dest": "/index.js" }]
+    "routes": [
+      { "src": "/ping", "dest": "/index.js", "methods": ["GET"] }
+    ]
   }
