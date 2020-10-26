@@ -1,6 +1,9 @@
-const app = require('express')();
-const http = require('http').createServer(app);
+const express = require('express');
+const app = express();
 const sv   = require('./pusher-channels/api/channels-event');
+
+// Body parser
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
@@ -8,6 +11,6 @@ app.get('/', (req, res) => {
 
 app.get('/ping', sv);
 
-http.listen(process.env.PORT || 3500, () => {
+app.listen(process.env.PORT || 3500, () => {
     console.log(`Localhost working on ${process.env.PORT || 3500}`);
  })
