@@ -4,15 +4,15 @@ let channels = new Pusher('83913f65af1492cd2762', {
   })
   
   // Subscribe to the appropriate channel
-  let channel = channels.subscribe('parched-car-945')
+  let channel = channels.subscribe('my-channel')
   
   // Bind a callback function to an event within the subscribed channel
-  channel.bind('event-name', function (data) {
-    // Do what you wish with the data from the event
+  channel.bind('my-event', function (data) {
+    alert(data);
   })
 
   async function pushData(data) {
-    const res = await fetch('/api/channels-event', {
+    const res = await fetch('/api/channels-event.js', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
