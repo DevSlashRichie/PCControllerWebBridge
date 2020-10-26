@@ -6,5 +6,5 @@
       "SECRET": "d809356d49592e639548",
       "CLUSTER": "us2"
     },
-    "routes": [{ "source": "/ping", "destination": "/index.js" }]
+    "routes": [{ "src": "/ping", "dest": "/index.js" }]
   }
