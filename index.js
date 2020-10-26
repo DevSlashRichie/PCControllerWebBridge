@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const sv   = require('./pusher-channels/api/channels-event');
+const sv   = require('./api/channels-event');
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
